@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Phaser Test</title>
+    <title>totinospizzaboygame</title>
 
     <script src="/libs/phaser/phaser.min.js" type="text/javascript"></script>
   </head>
