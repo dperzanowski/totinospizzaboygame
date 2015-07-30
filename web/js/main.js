@@ -95,12 +95,12 @@ function update() {
 
 
   if (checkOverlap(pizzaRollHitbox, pizzaBoyMouth)) {
-    music.play();
+    music.restart();
   }
 }
 
 function render() {
-  game.debug.soundInfo(music, 20, 20);
+  // game.debug.soundInfo(music, 20, 20);
 }
 
 function checkOverlap(spriteA, spriteB) {
