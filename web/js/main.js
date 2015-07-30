@@ -30,7 +30,7 @@ function create() {
 
   // draw a circle
   pizzaBoyMouth.lineStyle(0);
-  pizzaBoyMouth.beginFill(0xFF0000, 0.5);
+  pizzaBoyMouth.beginFill(0xFF0000, 0.0);
   pizzaBoyMouth.drawCircle(7, -150, 50);
   pizzaBoyMouth.endFill();
 
@@ -43,13 +43,12 @@ function create() {
 
   // draw a circle
   pizzaRollHitbox.lineStyle(0);
-  pizzaRollHitbox.beginFill(0x00FF00, 0.5);
+  pizzaRollHitbox.beginFill(0x00FF00, 0.0);
   pizzaRollHitbox.drawCircle(-55, -50, 50);
   pizzaRollHitbox.endFill();
 
   pizzaRoll = game.add.sprite(50, 50, 'pizza-roll');
   pizzaRoll.scale.set(0.5);
-  // pizzaRoll.anchor.setTo(0.5, 0.5);
   pizzaRoll.anchor.setTo(0.5, 0.5);
   pizzaRoll.addChild(pizzaRollHitbox);
 
@@ -100,7 +99,7 @@ function update() {
 }
 
 function render() {
-  // game.debug.soundInfo(music, 20, 20);
+  game.debug.soundInfo(music, 20, 20);
 }
 
 function checkOverlap(spriteA, spriteB) {
