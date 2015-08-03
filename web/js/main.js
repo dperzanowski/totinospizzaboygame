@@ -62,8 +62,6 @@ function create() {
 
   //  Our controls.
   cursors = game.input.keyboard.createCursorKeys();
-
-  music = game.add.audio('rolls-in-my-mouth', 0, 1, false, false);
 }
 
 function update() {
@@ -94,7 +92,7 @@ function update() {
 
 
   if (checkOverlap(pizzaRollHitbox, pizzaBoyMouth)) {
-    music.restart();
+    game.sound.play('', 0, 1, false, false);
   }
 }
 
