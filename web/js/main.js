@@ -63,7 +63,7 @@ function create() {
   //  Our controls.
   cursors = game.input.keyboard.createCursorKeys();
 
-  music = game.add.audio('rolls-in-my-mouth');
+  music = game.add.audio('rolls-in-my-mouth', 0, 1, false, false);
 }
 
 function update() {
