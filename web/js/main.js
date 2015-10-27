@@ -53,13 +53,13 @@ function create() {
   pizzaRoll.anchor.setTo(0.5, 0.5);
   pizzaRoll.addChild(pizzaRollHitbox);
 
-  var style1 = {font: "30px Helvetica", fill: "#f0f", align: "right"};
-  var style2 = {font: "30px Helvetica", fill: "#0ff", align: "right"};
-  var style3 = {font: "30px Helvetica", fill: "#ff0", align: "right"};
+  var style1 = {font: "30px Helvetica", fill: "#ff0000", align: "right"};
+  var style2 = {font: "30px Helvetica", fill: "#00f0f0", align: "right"};
+  var style3 = {font: "30px Helvetica", fill: "#0000ff", align: "right"};
 
   var actionBronsonName3 = game.add.text(570, 550, "Put some rolls in my mouth!", style3);
-  var actionBronsonName2 = game.add.text(571, 551, "Put some rolls in my mouth!", style2);
-  var actionBronsonName1 = game.add.text(572, 552, "Put some rolls in my mouth!", style1);
+  var actionBronsonName2 = game.add.text(572, 552, "Put some rolls in my mouth!", style2);
+  var actionBronsonName1 = game.add.text(574, 554, "Put some rolls in my mouth!", style1);
 
   // Our sounds
   pizzaroll_song = new Phaser.Sound(game, 'rolls-in-my-mouth');
