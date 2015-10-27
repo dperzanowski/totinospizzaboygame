@@ -10,6 +10,7 @@ var actionBronson;
 var pizzaRoll;
 var pizzaBoyMouth;
 var pizzaRollHitbox;
+var pizzaRollEaten;
 
 function preload() {
   game.load.image('warhammer-world', 'assets/warhammer-world.jpg');
@@ -30,7 +31,7 @@ function create() {
 
   // draw a circle
   pizzaBoyMouth.lineStyle(0);
-  pizzaBoyMouth.beginFill(0xFF0000, 0.0);
+  pizzaBoyMouth.beginFill(0xFF0000, 0.5);
   pizzaBoyMouth.drawCircle(7, -150, 50);
   pizzaBoyMouth.endFill();
 
@@ -43,7 +44,7 @@ function create() {
 
   // draw a circle
   pizzaRollHitbox.lineStyle(0);
-  pizzaRollHitbox.beginFill(0x00FF00, 0.0);
+  pizzaRollHitbox.beginFill(0x00FF00, 0.5);
   pizzaRollHitbox.drawCircle(-55, -50, 50);
   pizzaRollHitbox.endFill();
 
@@ -60,8 +61,15 @@ function create() {
   var actionBronsonName2 = game.add.text(571, 551, "Put some rolls in my mouth!", style2);
   var actionBronsonName1 = game.add.text(572, 552, "Put some rolls in my mouth!", style1);
 
+  // Our sounds
+  pizzaroll_song = new Phaser.Sound(game, 'rolls-in-my-mouth');
+  pizzaroll_song.allowMultiple = true;
+
   //  Our controls.
   cursors = game.input.keyboard.createCursorKeys();
+
+  // Our variables
+  var pizzaRollEaten = false;
 }
 
 function update() {
@@ -90,14 +98,19 @@ function update() {
     pizzaRoll.angle -= speed;
   }
 
-
+  if (checkOverlap(pizzaRollHitbox, pizzaBoyMouth) && !pizzaRollEaten) {
+    pizzaroll_song.play();
+  }
   if (checkOverlap(pizzaRollHitbox, pizzaBoyMouth)) {
-    game.sound.play('', 0, 1, false, false);
+    pizzaRollEaten = true;
+  }
+  if (!checkOverlap(pizzaRollHitbox, pizzaBoyMouth)) {
+    pizzaRollEaten = false;
   }
 }
 
 function render() {
-  game.debug.soundInfo(music, 20, 20);
+  game.debug.soundInfo(pizzaroll_song, 20, 20);
 }
 
 function checkOverlap(spriteA, spriteB) {
